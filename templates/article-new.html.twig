@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <h1 class='text-center'>New Article</h1>
+
+
+    <div class="container">
+<form method="post">
+  <div class="form-group row">
+    <label for="name" class="col-4 col-form-label">Name :</label> 
+    <div class="col-8">
+      <input id="name" name="name" placeholder="nom de l'article à ajouter" type="text" class="form-control {% if errors.name is defined %}is-invalid{% endif %}" required="required" value="{{ formData.name}}>
+    </div>
+     {% if errors.name is defined %}
+        <div class="invalid-feedback">
+            {{ messages.name }}
+        </div>
+      {% endif %}
+  </div>
+  <div class="form-group row">
+    <label for="price" class="col-4 col-form-label">Price :</label> 
+    <div class="col-8">
+      <input id="price" name="price" placeholder="prix de l'article à ajouter" type="text" class="form-control {% if errors.price is defined %}is-invalid{% endif %}" required="required" value="{{ formData.price}}>
+    </div>
+     {% if errors.price is defined %}
+        <div class="invalid-feedback">
+            {{ messages.price }}
+        </div>
+      {% endif %}
+  </div>
+  <div class="form-group row">
+    <label for="quantity" class="col-4 col-form-label">Quantity :</label> 
+    <div class="col-8">
+      <input id="quantity" name="quantity" placeholder="nombre d'articles à ajouter" type="text" class="form-control {% if errors.quantity is defined %}is-invalid{% endif %}" required="required" value="{{ formData.quantity}}>
+    </div>
+     {% if errors.quantity is defined %}
+        <div class="invalid-feedback">
+            {{ messages.quantity }}
+        </div>
+      {% endif %}
+  </div>
+  <div class="form-group row">
+    <label for="description" class="col-4 col-form-label">Description :</label> 
+    <div class="col-8">
+      <textarea id="description" name="description" cols="40" rows="4" class="form-control {% if errors.description is defined %}is-invalid{% endif %}" placeholder="Description de l'article à ajouter" value="{{ formData.description}}></textarea>
+    </div>
+     {% if errors.description is defined %}
+        <div class="invalid-feedback">
+            {{ messages.description }}
+        </div>
+      {% endif %}
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
